@@ -1,5 +1,5 @@
 # ~/.zshrc
-
+source antigen.zsh
 # Find and set branch name var if in git repository.
 function git_branch_name()
 {
@@ -18,7 +18,7 @@ setopt prompt_subst
 # Config for prompt. PS1 synonym.
 prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
 
-
+# ALIASES
 alias gp='git pull'
 alias gs='git status'
 alias gb='git branch'
@@ -30,3 +30,8 @@ alias gc='git commit'
 alias gcm='git commit -m'
 
 alias ls='ls -G -1 -a'
+alias reload='exec zsh'
+alias profile='code ~/.zshrc'
+
+# THEME
+antigen theme robbyrussell
