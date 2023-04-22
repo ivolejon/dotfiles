@@ -1,0 +1,6 @@
+*
+!.zshrc
+!antigen.zsh
+!.zshenv
+!.gitignore
+!*/**/zsh-autosuggestions.zsh

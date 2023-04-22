@@ -1,22 +1,10 @@
 # ~/.zshrc
-source antigen.zsh
+source ~/.zshenv
+source ~/antigen.zsh
 # Find and set branch name var if in git repository.
-function git_branch_name()
-{
-  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-  if [[ $branch == "" ]];
-  then
-    :
-  else
-    echo '- ('$branch')'
-  fi
-}
 
-# Enable substitution in the prompt.
-setopt prompt_subst
-
-# Config for prompt. PS1 synonym.
-prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
+# PLUGINS 
+# antigen bundle zsh-users/zsh-autosuggestions
 
 # ALIASES
 alias gp='git pull'
@@ -34,4 +22,17 @@ alias reload='exec zsh'
 alias profile='code ~/.zshrc'
 
 # THEME
-antigen theme robbyrussell
+# antigen theme Eastwood
+
+# LOAD
+antigen apply
+
+# Enable substitution in the prompt.
+setopt prompt_subst
+
+# Config for prompt. PS1 synonym.
+prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
+
+# MISC
+# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
