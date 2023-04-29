@@ -10,6 +10,7 @@ antigen bundle git
 alias ls='ls -G -1 -a'
 alias reload='exec zsh'
 alias profile='code ~/.zshrc'
+alias vim='nvim'
 
 bindkey '\t' end-of-line
 
