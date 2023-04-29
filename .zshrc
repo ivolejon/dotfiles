@@ -8,9 +8,11 @@ antigen bundle git
 
 # ALIASES
 alias ls='ls -G -1 -a'
-alias reload='exec zsh'
+alias reload_zsh='exec zsh'
 alias profile='code ~/.zshrc'
 alias vim='nvim'
+alias python='python3.9'
+alias pip='pip3'
 
 bindkey '\t' end-of-line
 
