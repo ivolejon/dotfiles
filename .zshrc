@@ -4,22 +4,14 @@ source ~/antigen.zsh
 # Find and set branch name var if in git repository.
 
 # PLUGINS 
-# antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle git
 
 # ALIASES
-alias gp='git pull'
-alias gs='git status'
-alias gb='git branch'
-alias gco='git checkout'
-alias gcb='git checkout -b'
-alias gd='git diff'
-alias ga='git add'
-alias gc='git commit'
-alias gcm='git commit -m'
-
 alias ls='ls -G -1 -a'
 alias reload='exec zsh'
 alias profile='code ~/.zshrc'
+
+bindkey '\t' end-of-line
 
 # THEME
 # antigen theme Eastwood
