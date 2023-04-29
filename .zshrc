@@ -20,6 +20,7 @@ alias gcm='git commit -m'
 alias ls='ls -G -1 -a'
 alias reload='exec zsh'
 alias profile='code ~/.zshrc'
+alias vim='nvim'
 
 # THEME
 # antigen theme Eastwood
