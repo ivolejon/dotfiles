@@ -4,3 +4,4 @@
 !.zshenv
 !.gitignore
 !*/**/zsh-autosuggestions.zsh
+!.tmux.conf
