@@ -5,14 +5,17 @@ source ~/antigen.zsh
 
 # PLUGINS 
 antigen bundle git
+antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
 
 # ALIASES
 alias ls='ls -G -1 -a'
 alias reload_zsh='exec zsh'
 alias profile='code ~/.zshrc'
 alias vim='nvim'
-alias python='python3.9'
 alias pip='pip3'
+alias python3='python3.9'
+alias python='python3.9'
+alias cheat='cat .cheat | grep -i '
 
 bindkey '\t' end-of-line
 
@@ -31,3 +34,4 @@ prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
 # MISC
 # git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.nvm/nvm.sh
