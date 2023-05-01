@@ -3,3 +3,5 @@
 [vim] CTRL-b Show open buffers
 [vim] CTRL-p Show files
 [vim] CTRL-w Close current buffer
+[vim] yiw Copy current word
+

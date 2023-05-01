@@ -6,7 +6,7 @@ set ai " Sets auto-indentation
 set si " Sets smart-indentation
 set noswapfile " Prevent vim from creating .swp files
 set cursorline " Highlight current cursor line
-set cursorcolumn " Highlight current cursor column
+" set cursorcolumn " Highlight current cursor column
 set tabstop=2 " Tab equal 2 spaces (default 4)
 set expandtab " Use spaces instead of a tab charater on TAB
 set smarttab " Be smart when using tabs
@@ -25,10 +25,18 @@ set noendofline " No end-of-line character
 
 let mapleader = " " " map leader to Space
 imap jj <Esc>
-nnoremap <leader>ps <cmd>Telescope live_grep<cr>
-nnoremap <C-p> <cmd>Telescope git_files<cr>
-nnoremap <C-b> <cmd>Telescope buffers<cr>
-nnoremap <C-w> :bdelete<CR>
+nnoremap <leader>ps :Telescope live_grep<cr>
+nnoremap <C-p> :Telescope git_files<cr>
+nnoremap <C-b> :Telescope buffers<cr>
+nnoremap <leader>n :bn<cr>
+nnoremap <leader>p :bp<cr>
+nnoremap <C-w> :bdelete<cr>
+map <C-c> :Commentary<cr>
+" Hard mode
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 call plug#begin()
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -36,9 +44,12 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'itchyny/lightline.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
-colorscheme tokyonight
+colorscheme tokyonight-night
 
 " This changes the linenumber so it has to be ran aftar the theme
 :highlight LineNr guifg=#FFFFCC
