@@ -1,2 +1,5 @@
-[tmux] CTRL+s % split vert
-[tmux] CTRL+s x close pane
+[tmux] CTRL-s % Split vert
+[tmux] CTRL-s x Close pane
+[vim] CTRL-b Show open buffers
+[vim] CTRL-p Show files
+[vim] CTRL-w Close current buffer
