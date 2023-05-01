@@ -1,6 +1,8 @@
 :set number relativenumber
 :set nu rnu
-
+:set wildmenu
+:set wildmode=longest:full,full
+:set wildoptions=pum
 
 
 let mapleader = " " " map leader to Space
