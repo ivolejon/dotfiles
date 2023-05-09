@@ -15,8 +15,9 @@ alias vim='nvim'
 alias pip='pip3'
 alias python3='python3.9'
 alias python='python3.9'
-alias cheat='cat .cheat | grep -i '
-
+alias cheat='cat ~/.cheat | grep -i '
+alias lg='lazygit'
+alias git='LC_ALL=en_US git'
 bindkey '\t' end-of-line
 
 # THEME
