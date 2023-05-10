@@ -18,6 +18,9 @@ alias python='python3.9'
 alias cheat='cat ~/.cheat | grep -i '
 alias lg='lazygit'
 alias git='LC_ALL=en_US git'
+alias dev='sh dev.sh'
+
+# KEYBINDINGS
 bindkey '\t' end-of-line
 
 # THEME
@@ -35,4 +38,7 @@ prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
 # MISC
 # git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.nvm/nvm.sh
+
+if [ -f "~/.nvm/nvm.sh" ]; then
+    source ~/.nvm/nvm.sh
+fi
