@@ -6,19 +6,7 @@ source ~/antigen.zsh
 # PLUGINS 
 antigen bundle git
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
-
-# ALIASES
-alias ls='ls -G -1 -a'
-alias reload_zsh='exec zsh'
-alias profile='code ~/.zshrc'
-alias vim='nvim'
-alias pip='pip3'
-alias python3='python3.9'
-alias python='python3.9'
-alias cheat='cat ~/.cheat | grep -i '
-alias lg='lazygit'
-alias git='LC_ALL=en_US git'
-alias dev='sh dev.sh'
+antigen bundle djui/alias-tips
 
 # KEYBINDINGS
 bindkey '\t' end-of-line
@@ -39,6 +27,30 @@ prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
 # git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-if [ -f "~/.nvm/nvm.sh" ]; then
+# if [ -f "~/.nvm/nvm.sh" ]; then
     source ~/.nvm/nvm.sh
-fi
+# fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ALIASES
+alias ls='ls -G -1 -a'
+alias reload_zsh='exec zsh'
+alias profile='code ~/.zshrc'
+alias vim='nvim'
+alias pip='pip3'
+alias python3='python3.9'
+alias python='python3.9'
+alias cheat='cat ~/.cheat | grep -i '
+alias lg='lazygit'
+alias git='LC_ALL=en_US git'
+alias dev='sh dev.sh'
+alias gp='git pull'
+alias gpa='git pull --all'
+alias chown_to_me='sudo chown -R $(whoami) .'
+alias gs='git standup'
+
+function git_since() {
+    git log --merges --since=$1 --pretty=format:"%h - %s (%cd)" --date=short
+}
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
