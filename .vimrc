@@ -31,6 +31,7 @@ nnoremap <C-b> :Telescope buffers<cr>
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <C-w> :bdelete<cr>
+nnoremap - $
 map <C-c> :Commentary<cr>
 " Hard mode
 noremap <Up> <Nop>
