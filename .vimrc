@@ -50,6 +50,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'github/copilot.vim'
 Plug 'smolck/command-completion.nvim'
+Plug 'echasnovski/mini.starter'
 " LSP Support
 Plug 'neovim/nvim-lspconfig'                           " Required
 Plug 'williamboman/mason.nvim', {'do': ':MasonUpdate'} " Optional
@@ -62,7 +63,6 @@ Plug 'L3MON4D3/LuaSnip'         " Required
 
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
 call plug#end()
-
 lua <<EOF
 local lsp = require('lsp-zero').preset({})
 
@@ -71,6 +71,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 require('command-completion').setup()
+require('mini.starter').setup()
 -- " (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
