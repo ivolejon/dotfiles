@@ -7,6 +7,10 @@ source ~/antigen.zsh
 antigen bundle git
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
 antigen bundle djui/alias-tips
+antigen bundle agkozak/zsh-z
+
+
+zstyle ':completion:*' menu select
 
 # KEYBINDINGS
 bindkey '\t' end-of-line
@@ -48,6 +52,8 @@ alias gp='git pull'
 alias gpa='git pull --all'
 alias chown_to_me='sudo chown -R $(whoami) .'
 alias gs='git standup'
+alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
+
 
 function git_since() {
     git log --merges --since=$1 --pretty=format:"%h - %s (%cd)" --date=short
