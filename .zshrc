@@ -5,10 +5,10 @@ source ~/antigen.zsh
 # Find and set branch name var if in git repository.
 
 # PLUGINS 
-antigen bundle git
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
 antigen bundle djui/alias-tips
 antigen bundle agkozak/zsh-z
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # LOAD
 antigen apply
@@ -27,10 +27,20 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
     source ~/.nvm/nvm.sh
 # fi
 
+# AUTOCOMPLETE
 autoload -Uz compinit && compinit
 zstyle ':completion:*' completer _extensions _complete _approximate
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
+
+# KEYBINDINGS with arrow keys LS
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A'  up-line-or-beginning-search    # Arrow up
+bindkey '^[OA'  up-line-or-beginning-search
+bindkey '^[[B'  down-line-or-beginning-search  # Arrow down
+bindkey '^[OB'  down-line-or-beginning-search
 
 # ALIASES
 alias ls='ls -G -1 -a'
@@ -42,15 +52,29 @@ alias python3='python3.9'
 alias python='python3.9'
 alias cheat='cat ~/.cheat | grep -i '
 alias lg='lazygit'
-alias git='LC_ALL=en_US git'
 alias dev='sh dev.sh'
-alias gp='git pull'
-alias gpa='git pull --all'
 alias chown_to_me='sudo chown -R $(whoami) .'
-alias gs='git standup'
 alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
-alias c='commit'
 
+
+# GIT
+alias git='LC_ALL=en_US git'
+alias gi="git init"
+alias gs="git status -sbu"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gp="git push"
+alias gm="git merge"
+alias ga="git add ."
+alias gcm="git commit -m"
+alias gpl="git pull"
+alias gst="git stash"
+alias gstl="git stash list"
+alias glg='git log --graph --oneline --decorate --all'
+alias gs='git standup'
+alias gc='commit'
+
+# EXPORTS
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export VISUAL=nvim
 export EDITOR=nvim
