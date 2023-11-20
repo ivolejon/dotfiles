@@ -50,11 +50,6 @@ alias chown_to_me='sudo chown -R $(whoami) .'
 alias gs='git standup'
 alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
 
-
-function git_since() {
-    git log --merges --since=$1 --pretty=format:"%h - %s (%cd)" --date=short
-}
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export VISUAL=nvim
 export EDITOR=nvim
