@@ -1,3 +1,4 @@
+
 # ~/.zshrc
 source ~/.zshenv
 source ~/antigen.zsh
@@ -8,15 +9,6 @@ antigen bundle git
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
 antigen bundle djui/alias-tips
 antigen bundle agkozak/zsh-z
-
-
-zstyle ':completion:*' menu select
-
-# KEYBINDINGS
-bindkey '\t' end-of-line
-
-# THEME
-# antigen theme Eastwood
 
 # LOAD
 antigen apply
@@ -34,7 +26,11 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # if [ -f "~/.nvm/nvm.sh" ]; then
     source ~/.nvm/nvm.sh
 # fi
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' completer _extensions _complete _approximate
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
 
 # ALIASES
 alias ls='ls -G -1 -a'
