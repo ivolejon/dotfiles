@@ -20,7 +20,7 @@ function commit {
     reset='\033[0m'
     git add .
 
-    echo "Enter a commit message: "
+    echo -n "Enter a commit message: "
     echo -e $green
     read commit_message
     echo -e $reset
