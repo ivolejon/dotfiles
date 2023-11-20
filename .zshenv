@@ -16,11 +16,14 @@ function git_since() {
 }
 
 function commit {
-
+    green='\033[0;32m'
+    reset='\033[0m'
     git add .
 
-    echo -n "Enter a commit message: "
+    echo "Enter a commit message: "
+    echo -e $green
     read commit_message
+    echo -e $reset
 
     if [ -n "$commit_message" ]; then
         git commit -m "$commit_message"
