@@ -30,3 +30,9 @@ function commit {
         git push
     fi
 }
+
+function git_browse {
+    gbrowsevar=$(git config --get remote.origin.url)
+    printf "${gbrowsevar}"
+    open $gbrowsevar
+}

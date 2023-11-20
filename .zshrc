@@ -13,13 +13,11 @@ antigen apply
 # PLUGINS MORE
 # git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.nvm/nvm.sh
 
 #PROMPT
 setopt prompt_subst
 prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
-
-# MISC
-source ~/.nvm/nvm.sh
 
 # AUTOCOMPLETE
 autoload -Uz compinit && compinit
@@ -67,6 +65,7 @@ alias gstl="git stash list"
 alias glg='git log --graph --oneline --decorate --all'
 alias gs='git standup'
 alias gc='commit'
+alias gr='git_browse'
 
 
 
