@@ -2,30 +2,24 @@
 # ~/.zshrc
 source ~/.zshenv
 source ~/antigen.zsh
-# Find and set branch name var if in git repository.
 
 # PLUGINS 
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
 antigen bundle djui/alias-tips
 antigen bundle agkozak/zsh-z
 antigen bundle zsh-users/zsh-syntax-highlighting
-
-# LOAD
 antigen apply
 
-# Enable substitution in the prompt.
-setopt prompt_subst
-
-# Config for prompt. PS1 synonym.
-prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
-
-# MISC
+# PLUGINS MORE
 # git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# if [ -f "~/.nvm/nvm.sh" ]; then
-    source ~/.nvm/nvm.sh
-# fi
+#PROMPT
+setopt prompt_subst
+prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
+
+# MISC
+source ~/.nvm/nvm.sh
 
 # AUTOCOMPLETE
 autoload -Uz compinit && compinit
@@ -57,10 +51,10 @@ alias chown_to_me='sudo chown -R $(whoami) .'
 alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
 
 
-# GIT
+# ALIAS GIT
 alias git='LC_ALL=en_US git'
 alias gi="git init"
-alias gs="git status -sbu"
+alias status="git status -sbu"
 alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gp="git push"
@@ -73,6 +67,8 @@ alias gstl="git stash list"
 alias glg='git log --graph --oneline --decorate --all'
 alias gs='git standup'
 alias gc='commit'
+
+
 
 # EXPORTS
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
