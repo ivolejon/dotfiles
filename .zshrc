@@ -3,11 +3,46 @@
 source ~/.zshenv
 source ~/antigen.zsh
 
+# ALIASES
+alias ls='ls -G -1 -a'
+alias reload_zsh='exec zsh'
+alias profile='code ~/.zshrc'
+alias vim='nvim'
+alias pip='pip3'
+alias python3='python3.9'
+alias python='python3.9'
+alias cheat='cat ~/.cheat | grep -i '
+alias lg='lazygit'
+alias dev='sh dev.sh'
+alias chown_to_me='sudo chown -R $(whoami) .'
+alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
+alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
+
+# ALIAS GIT
+alias git='LC_ALL=en_US git'
+alias gi="git init"
+alias status="git status -sbu"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gp="git push"
+alias gm="git merge"
+alias ga="git add ."
+alias gcm="git commit -m"
+alias gpl="git pull"
+alias gst="git stash"
+alias gstl="git stash list"
+alias glg='git log --graph --oneline --decorate --all'
+alias gs='git standup'
+alias gc='commit'
+alias gr='git_browse'
+alias reset='git reset --hard'
+
 # PLUGINS 
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
 antigen bundle djui/alias-tips
 antigen bundle agkozak/zsh-z
 antigen bundle zsh-users/zsh-syntax-highlighting
+
 antigen apply
 
 # PLUGINS MORE
@@ -33,40 +68,6 @@ bindkey '^[[A'  up-line-or-beginning-search    # Arrow up
 bindkey '^[OA'  up-line-or-beginning-search
 bindkey '^[[B'  down-line-or-beginning-search  # Arrow down
 bindkey '^[OB'  down-line-or-beginning-search
-
-# ALIASES
-alias ls='ls -G -1 -a'
-alias reload_zsh='exec zsh'
-alias profile='code ~/.zshrc'
-alias vim='nvim'
-alias pip='pip3'
-alias python3='python3.9'
-alias python='python3.9'
-alias cheat='cat ~/.cheat | grep -i '
-alias lg='lazygit'
-alias dev='sh dev.sh'
-alias chown_to_me='sudo chown -R $(whoami) .'
-alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
-
-
-# ALIAS GIT
-alias git='LC_ALL=en_US git'
-alias gi="git init"
-alias status="git status -sbu"
-alias gco="git checkout"
-alias gcob="git checkout -b"
-alias gp="git push"
-alias gm="git merge"
-alias ga="git add ."
-alias gcm="git commit -m"
-alias gpl="git pull"
-alias gst="git stash"
-alias gstl="git stash list"
-alias glg='git log --graph --oneline --decorate --all'
-alias gs='git standup'
-alias gc='commit'
-alias gr='git_browse'
-
 
 
 # EXPORTS
