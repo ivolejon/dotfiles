@@ -18,6 +18,13 @@ alias chown_to_me='sudo chown -R $(whoami) .'
 alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
 alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
 
+# AWS Aliases
+alias .aws='code ~/.aws/credentials'
+alias ssh-klingit-dev="aws ssm start-session --target i-0ca7b2bcb141f6fe2 --region eu-north-1"
+alias ssh-klingit-prod="aws ssm start-session --target i-054afcb0cfd7d6ae2 --region eu-north-1"
+alias ssh-stage="ssh -i 'id_ed25519' ubuntu@10.10.43.23"
+alias ssh-prod="ssh -i 'id_ed25519' ubuntu@10.30.24.85"
+
 # ALIAS GIT
 alias git='LC_ALL=en_US git'
 alias gi="git init"
