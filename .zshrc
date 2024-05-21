@@ -4,7 +4,7 @@ source ~/.zshenv
 source ~/antigen.zsh
 
 # ALIASES
-alias ls='ls -G -1 -a'
+alias ls='ls -G -1 -a --color'
 alias reload_zsh='exec zsh'
 alias profile='code ~/.zshrc'
 alias vim='nvim'
@@ -17,13 +17,17 @@ alias dev='sh dev.sh'
 alias chown_to_me='sudo chown -R $(whoami) .'
 alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
 alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
+alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {}'"
 
-# AWS Aliases
-alias .aws='code ~/.aws/credentials'
-alias ssh-klingit-dev="aws ssm start-session --target i-0ca7b2bcb141f6fe2 --region eu-north-1"
-alias ssh-klingit-prod="aws ssm start-session --target i-054afcb0cfd7d6ae2 --region eu-north-1"
-alias ssh-stage="ssh -i 'id_ed25519' ubuntu@10.10.43.23"
-alias ssh-prod="ssh -i 'id_ed25519' ubuntu@10.30.24.85"
+# SSH Aliases
+alias ssm-klingit-stage="aws ssm start-session --target i-0ca7b2bcb141f6fe2 --region eu-north-1"
+alias ssm-klingit-prod="aws ssm start-session --target i-054afcb0cfd7d6ae2 --region eu-north-1"
+alias ssm-klingit-prod2="aws ssm start-session --target i-0896e454fb371871d --region eu-north-1"
+alias ssm-klingit-metabase="aws ssm start-session --target i-02c5f67784ff5bf69 --region eu-north-1"
+alias ssh-klingit-stage="ssh -i 'id_ed25519' ubuntu@10.10.43.23"
+alias ssh-klingit-prod="ssh -i 'id_ed25519' ubuntu@10.30.24.85"
+alias ssh-klingit-prod2="ssh -i 'id_ed25519' ubuntu@10.30.61.31"
+
 
 # ALIAS GIT
 alias git='LC_ALL=en_US git'
@@ -65,6 +69,7 @@ prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
 autoload -Uz compinit && compinit
 zstyle ':completion:*' completer _extensions _complete _approximate
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
 
 # KEYBINDINGS with arrow keys LS
@@ -76,11 +81,34 @@ bindkey '^[OA'  up-line-or-beginning-search
 bindkey '^[[B'  down-line-or-beginning-search  # Arrow down
 bindkey '^[OB'  down-line-or-beginning-search
 
+#HISTORY
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # EXPORTS
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export VISUAL=nvim
 export EDITOR=nvim
 export PATH="$HOME/go/bin:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.moon/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/ivo/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
