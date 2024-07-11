@@ -1,0 +1,20 @@
+[editor]
+line-number = "relative"
+
+mouse = true
+
+auto-format = true
+
+auto-pairs = true
+
+[editor.lsp]
+display-messages = true
+
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+
+[editor.file-picker]
+hidden = false

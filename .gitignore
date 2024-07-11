@@ -7,5 +7,13 @@
 !.tmux.conf
 !.vimrc
 !.cheat
-!.config/helix
-!.config/lf
+.config/*
+!.config/
+.config/alacritty/*
+!.config/alacritty/
+!.config/alacritty/alacritty.toml
+.config/*
+!.config/
+.config/helix/*
+!.config/helix/
+!.config/helix/config.toml
