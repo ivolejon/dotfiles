@@ -36,3 +36,5 @@ function git_browse {
     printf "${gbrowsevar}"
     open $gbrowsevar
 }
+# uv
+export PATH="/Users/ivolejon/.local/bin:$PATH"

@@ -9,8 +9,8 @@ alias reload_zsh='exec zsh'
 alias profile='code ~/.zshrc'
 alias vim='nvim'
 alias pip='pip3'
-alias python3='python3.9'
-alias python='python3.9'
+# alias python3='python3.9'
+# alias python='python3.9'
 alias cheat='cat ~/.cheat | grep -i '
 alias lg='lazygit'
 alias dev='sh dev.sh'
@@ -111,3 +111,13 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+export PATH="/Applications/Postgres.app/Contents/Versions/16/bin:$PATH"
+
+export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
+
+# bun completions
+[ -s "/Users/ivolejon/.bun/_bun" ] && source "/Users/ivolejon/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
