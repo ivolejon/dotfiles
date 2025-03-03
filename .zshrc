@@ -19,15 +19,41 @@ alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kil
 alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {}'"
 
-# SSH Aliases
-alias ssm-klingit-stage="aws ssm start-session --target i-0ca7b2bcb141f6fe2 --region eu-north-1"
-alias ssm-klingit-prod="aws ssm start-session --target i-054afcb0cfd7d6ae2 --region eu-north-1"
-alias ssm-klingit-prod2="aws ssm start-session --target i-0896e454fb371871d --region eu-north-1"
-alias ssm-klingit-metabase="aws ssm start-session --target i-02c5f67784ff5bf69 --region eu-north-1"
-alias ssh-klingit-stage="ssh -i 'id_ed25519' ubuntu@10.10.43.23"
-alias ssh-klingit-prod="ssh -i 'id_ed25519' ubuntu@10.30.24.85"
-alias ssh-klingit-prod2="ssh -i 'id_ed25519' ubuntu@10.30.61.31"
 
+# Docker Compose Aliases on local host
+# alias krun='docker compose -f docker-compose.dev.yml up -d'
+# alias kwat='docker compose -f docker-compose.dev.yml watch'
+# alias kdown='docker compose -f docker-compose.dev.yml down'
+# alias kapi="docker compose -f docker-compose.dev.yml run api bash"
+# alias kgo="docker compose -f docker-compose.dev.yml run be-go bash"
+# alias kimport="docker compose --env-file development.env -f docker-compose.dev.yml run api bash ./import-database-dump.sh"
+
+# klogs() {
+#   if [ -z "$1" ]; then
+#     docker compose --env-file development.env -f docker-compose.dev.yml logs -f
+#   else
+#     docker compose --env-file development.env -f docker-compose.dev.yml logs -f "$1"
+#   fi
+# }
+
+
+alias dozzle="docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8090:8080 amir20/dozzle:latest"
+
+# SSH Aliases
+# alias ssm-klingit-stage="aws ssm start-session --target i-0ca7b2bcb141f6fe2 --region eu-north-1"
+# alias ssm-klingit-prod="aws ssm start-session --target i-054afcb0cfd7d6ae2 --region eu-north-1"
+# alias ssm-klingit-prod2="aws ssm start-session --target i-0896e454fb371871d --region eu-north-1"
+# alias ssm-klingit-metabase="aws ssm start-session --target i-02c5f67784ff5bf69 --region eu-north-1"
+# alias ssh-klingit-stage="ssh -i 'id_ed25519' ubuntu@10.10.43.23"
+# alias ssh-klingit-prod="ssh -i 'id_ed25519' ubuntu@10.30.24.85"
+# alias ssh-klingit-prod2="ssh -i 'id_ed25519' ubuntu@10.30.61.31"
+
+# # Docker Aliases
+# alias docker_in="docker -H private.uat.klingit.com"
+# alias docker_pd="docker -H private.production.klingit.com"
+
+# alias ssh_uat="ssh -i ~/.ssh/id_digital_ocean core@private.uat.klingit.com"                # 1pass
+# alias ssh_pd="ssh -i ~/.ssh/id_digital_ocean core@private.production.klingit.com" # 1pass
 
 # ALIAS GIT
 alias git='LC_ALL=en_US git'
@@ -48,7 +74,7 @@ alias gc='commit'
 alias gr='git_browse'
 alias reset='git reset --hard'
 
-# PLUGINS 
+# PLUGINS
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
 antigen bundle djui/alias-tips
 antigen bundle agkozak/zsh-z
@@ -102,6 +128,7 @@ export PATH="$HOME/go/bin:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$HOME/.moon/bin:$PATH"
+export ENVIRONMENT=development
 
 # pnpm
 export PNPM_HOME="/Users/ivo/Library/pnpm"
@@ -110,10 +137,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-export PATH="/Applications/Postgres.app/Contents/Versions/16/bin:$PATH"
-
-export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
 
 # bun completions
 [ -s "/Users/ivolejon/.bun/_bun" ] && source "/Users/ivolejon/.bun/_bun"
