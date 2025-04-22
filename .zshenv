@@ -8,7 +8,7 @@ function git_branch_name()
     echo '- ('$branch')'
   fi
 }
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 
 function git_since() {

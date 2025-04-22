@@ -9,8 +9,7 @@ alias reload_zsh='exec zsh'
 alias profile='code ~/.zshrc'
 alias vim='nvim'
 alias pip='pip3'
-# alias python3='python3.9'
-# alias python='python3.9'
+alias python='python3'
 alias cheat='cat ~/.cheat | grep -i '
 alias lg='lazygit'
 alias dev='sh dev.sh'
@@ -144,3 +143,4 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
