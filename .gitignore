@@ -9,11 +9,9 @@
 !.cheat
 .config/*
 !.config/
-.config/alacritty/*
-!.config/alacritty/
-!.config/alacritty/alacritty.toml
 .config/*
 !.config/
 .config/helix/*
 !.config/helix/
 !.config/helix/config.toml
+!.config/ghostty/config.toml

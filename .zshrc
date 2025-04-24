@@ -1,4 +1,3 @@
-
 # ~/.zshrc
 source ~/.zshenv
 source ~/antigen.zsh
@@ -144,3 +143,11 @@ esac
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/ivolej01/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+export PATH="$PATH:/Users/ivolej01/.dotnet/tools"
+
+source ~/.secrets
