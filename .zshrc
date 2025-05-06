@@ -1,4 +1,6 @@
-# ~/.zshrc
+
+
+
 source ~/.zshenv
 source ~/antigen.zsh
 
@@ -9,13 +11,12 @@ alias profile='code ~/.zshrc'
 alias vim='nvim'
 alias pip='pip3'
 alias python='python3'
-alias cheat='cat ~/.cheat | grep -i '
 alias lg='lazygit'
-alias dev='sh dev.sh'
 alias chown_to_me='sudo chown -R $(whoami) .'
 alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
 alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {}'"
+alias npm='pnpm'
 
 
 # Docker Compose Aliases on local host
@@ -36,22 +37,6 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {
 
 
 alias dozzle="docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8090:8080 amir20/dozzle:latest"
-
-# SSH Aliases
-# alias ssm-klingit-stage="aws ssm start-session --target i-0ca7b2bcb141f6fe2 --region eu-north-1"
-# alias ssm-klingit-prod="aws ssm start-session --target i-054afcb0cfd7d6ae2 --region eu-north-1"
-# alias ssm-klingit-prod2="aws ssm start-session --target i-0896e454fb371871d --region eu-north-1"
-# alias ssm-klingit-metabase="aws ssm start-session --target i-02c5f67784ff5bf69 --region eu-north-1"
-# alias ssh-klingit-stage="ssh -i 'id_ed25519' ubuntu@10.10.43.23"
-# alias ssh-klingit-prod="ssh -i 'id_ed25519' ubuntu@10.30.24.85"
-# alias ssh-klingit-prod2="ssh -i 'id_ed25519' ubuntu@10.30.61.31"
-
-# # Docker Aliases
-# alias docker_in="docker -H private.uat.klingit.com"
-# alias docker_pd="docker -H private.production.klingit.com"
-
-# alias ssh_uat="ssh -i ~/.ssh/id_digital_ocean core@private.uat.klingit.com"                # 1pass
-# alias ssh_pd="ssh -i ~/.ssh/id_digital_ocean core@private.production.klingit.com" # 1pass
 
 # ALIAS GIT
 alias git='LC_ALL=en_US git'
@@ -116,6 +101,11 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+# KUBERNETES
+export KUBE_EDITOR=nvim
+alias k="kubecolor"
+source ~/.kube-config
 
 # EXPORTS
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES

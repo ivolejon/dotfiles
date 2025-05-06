@@ -1,0 +1,5 @@
+function k_use_stodev03_api(){
+  export KUBECONFIG=/Users/ivolej01/.kube/stodev03.yaml
+  alias k='kubecolor -n nyhetspublicering-labb-mono-backend'
+  echo "Using kubeconfig for stodev03 Api"
+}
