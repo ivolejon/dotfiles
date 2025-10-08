@@ -1,5 +1,18 @@
 function k_use_stodev03_api(){
   export KUBECONFIG=/Users/ivolej01/.kube/stodev03.yaml
-  alias k='kubecolor -n nyhetspublicering-labb-mono-backend'
+  kubectl config set-context --current --namespace=nyhetspublicering-labb-mono-backend
   echo "Using kubeconfig for stodev03 Api"
 }
+
+function k_use_stodev03_frontend(){
+  export KUBECONFIG=/Users/ivolej01/.kube/stodev03.yaml
+  kubectl config set-context --current --namespace=nyhetspublicering-labb-mono-frontend
+  echo "Using kubeconfig for stodev03 Frontend"
+}
+
+function k_use_stodev03_database(){
+  export KUBECONFIG=/Users/ivolej01/.kube/stodev03.yaml
+  kubectl config set-context --current --namespace=nyhetspublicering-labb-kubedb-postgres-dev
+  echo "Using kubeconfig for stodev03 Database"
+}
+

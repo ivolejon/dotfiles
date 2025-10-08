@@ -1,6 +1,3 @@
-
-
-
 source ~/.zshenv
 source ~/antigen.zsh
 
@@ -16,7 +13,7 @@ alias chown_to_me='sudo chown -R $(whoami) .'
 alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
 alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {}'"
-alias npm='pnpm'
+
 
 
 # Docker Compose Aliases on local host
@@ -49,7 +46,7 @@ alias gm="git merge"
 alias ga="git add ."
 alias gcm="git commit -m"
 alias gpl="git pull"
-alias gst="git stash"
+alias gst="git stash -u"
 alias gstl="git stash list"
 alias glg='git log --graph --oneline --decorate --all'
 alias gs='git standup'
@@ -105,7 +102,18 @@ setopt hist_find_no_dups
 # KUBERNETES
 export KUBE_EDITOR=nvim
 alias k="kubecolor"
-source ~/.kube-config
+if [ -f ~/.kube-config ]; then
+  source ~/.kube-config
+else
+  echo "Skipping sourcing ~/.kube-config: File not found."
+fi
+
+# AIDER
+if [ -f ~/.kube-config ]; then
+  source ~/.ai
+else
+  echo "Skipping sourcing ~/.ai: File not found."
+fi
 
 # EXPORTS
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
@@ -134,10 +142,28 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/ivolej01/.rd/bin:$PATH"
+## MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+# export PATH="/Users/ivolej01/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
+export PATH="/Users/ivolej01/.docker/bin:$PATH"
 export PATH="$PATH:/Users/ivolej01/.dotnet/tools"
+
+
+. "$HOME/.local/bin/env"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ivolej01/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+
+# export DOTNET_ROOT="$(dirname "$(which dotnet)")"
+export DOTNET_ROOT="/usr/local/share/dotnet"
+export PATH="$PATH:/usr/local/share/dotnet"
+alias p='pnpm'
+
+alias pphost="pnpm -F host dev"
+alias ppremote="pnpm -F nyheter remote"
 
 source ~/.secrets
