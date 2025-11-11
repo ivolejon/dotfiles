@@ -36,7 +36,7 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {
 alias dozzle="docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8090:8080 amir20/dozzle:latest"
 
 # ALIAS GIT
-alias git='LC_ALL=en_US git'
+# alias git='LC_ALL=en_US git'
 alias gi="git init"
 alias status="git status -sbu"
 alias gco="git checkout"
@@ -69,7 +69,7 @@ source ~/.nvm/nvm.sh
 
 #PROMPT
 setopt prompt_subst
-prompt='%F{green}$%2/ %F{red}$(git_branch_name)%F{default}> '
+prompt='%F{green}%*%f %F{blue}%~%f %F{red}$(git_branch_name)%F{default}> '
 
 # AUTOCOMPLETE
 autoload -Uz compinit && compinit
