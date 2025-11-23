@@ -1,0 +1,13 @@
+font-size = 14
+theme = tokyonight-storm
+adjust-cell-height = 25%
+keybind=ctrl+shift+w=close_window
+confirm-close-surface=false
+
+keybind = ctrl+s>c=new_tab
+keybind = ctrl+s>x=close_surface
+keybind = ctrl+s>h=new_split:right
+keybind = ctrl+s>v=new_split:down
+keybind = global:ctrl+k=clear_screen
+
+shell-integration = zsh

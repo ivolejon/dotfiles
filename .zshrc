@@ -4,7 +4,7 @@ source ~/antigen.zsh
 # ALIASES
 alias ls='ls -G -1 -a --color'
 alias reload_zsh='exec zsh'
-alias profile='code ~/.zshrc'
+alias profile='zed ~/.zshrc'
 alias vim='nvim'
 alias pip='pip3'
 alias python='python3'
@@ -13,26 +13,7 @@ alias chown_to_me='sudo chown -R $(whoami) .'
 alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
 alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {}'"
-
-
-
-# Docker Compose Aliases on local host
-# alias krun='docker compose -f docker-compose.dev.yml up -d'
-# alias kwat='docker compose -f docker-compose.dev.yml watch'
-# alias kdown='docker compose -f docker-compose.dev.yml down'
-# alias kapi="docker compose -f docker-compose.dev.yml run api bash"
-# alias kgo="docker compose -f docker-compose.dev.yml run be-go bash"
-# alias kimport="docker compose --env-file development.env -f docker-compose.dev.yml run api bash ./import-database-dump.sh"
-
-# klogs() {
-#   if [ -z "$1" ]; then
-#     docker compose --env-file development.env -f docker-compose.dev.yml logs -f
-#   else
-#     docker compose --env-file development.env -f docker-compose.dev.yml logs -f "$1"
-#   fi
-# }
-
-
+alias rg="rg --no-ignore --hidden --colors 'match:fg:yellow' --colors 'path:fg:green'"
 alias dozzle="docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8090:8080 amir20/dozzle:latest"
 
 # ALIAS GIT
@@ -53,6 +34,7 @@ alias gs='git standup'
 alias gc='commit'
 alias gr='git_browse'
 alias reset='git reset --hard'
+alias c='clear'
 
 # PLUGINS
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
@@ -124,7 +106,6 @@ export PATH="$HOME/go/bin:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$HOME/.moon/bin:$PATH"
-export ENVIRONMENT=development
 
 # pnpm
 export PNPM_HOME="/Users/ivo/Library/pnpm"
@@ -167,3 +148,4 @@ alias pphost="pnpm -F host dev"
 alias ppremote="pnpm -F nyheter remote"
 
 source ~/.secrets
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
