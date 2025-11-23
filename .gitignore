@@ -1,32 +1,20 @@
-# -----------------------------------------------
-# 1. IGNORE EVERYTHING
-# -----------------------------------------------
 *
-
-# -----------------------------------------------
-# 2. UNIGNORE TOP-LEVEL FILES & DIRECTORIES
-#    (Must unignore parent directories first)
-# -----------------------------------------------
-
-# Unignore the primary directories
-!.config/        # Necessary to track contents inside .config/
-!.ghostty/       # Necessary to track contents inside .ghostty/
-
-# Unignore top-level dotfiles
 !.zshrc
 !antigen.zsh
 !.zshenv
 !.gitignore
+!*/**/zsh-autosuggestions.zsh
 !.tmux.conf
 !.vimrc
 !.cheat
-!.kube-config
-
-
-# -----------------------------------------------
-# 3. UNIGNORE SPECIFIC NESTED FILES
-# -----------------------------------------------
-!*/**/zsh-autosuggestions.zsh
+.config/*
+!.config/
+.config/*
+!.config/*
+.config/helix/*
+!.config/helix/**
 !.config/helix/config.toml
 !.config/ghostty/config.toml
-!.config/zed/*
+!.kube-config
+!.config/zed/**/*.json
+!.config/ghostty/**
