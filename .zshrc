@@ -4,7 +4,7 @@ source ~/antigen.zsh
 # ALIASES
 alias ls='ls -G -1 -a --color'
 alias reload_zsh='exec zsh'
-alias profile='zed ~/.zshrc'
+alias config='zed ~'
 alias vim='nvim'
 alias pip='pip3'
 alias python='python3'
@@ -35,6 +35,10 @@ alias gc='commit'
 alias gr='git_browse'
 alias reset='git reset --hard'
 alias c='clear'
+
+# Sveriges Radio Alias
+alias start-nyheter='ASPIRE_ALLOW_UNSECURED_TRANSPORT=true dotnet run --project Nyhetspublicering.AppHost --launch-profile http'
+source ~/.dotnet.ef.commands
 
 # PLUGINS
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"

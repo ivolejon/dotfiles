@@ -18,3 +18,4 @@
 !.kube-config
 !.config/zed/**/*.json
 !.config/ghostty/**
+!.dotnet.ef.commands

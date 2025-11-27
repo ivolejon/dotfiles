@@ -1,0 +1,61 @@
+# Function to simplify common EF migrations commands
+db() {
+  case "$1" in
+    # 0. Check for no argument (just 'db') or 'help'
+    ""|help)
+      echo "✨ Entity Framework Core Migration Utility (db)"
+      echo "--------------------------------------------------------"
+      echo "Supported commands:"
+      echo "  db new <name>      : Executes 'dotnet ef migrations add <name>'"
+      echo "  db list            : Executes 'dotnet ef migrations list'"
+      echo "  db migrate         : Executes 'dotnet ef database update'"
+      echo "  db down <name | 0> : Executes 'dotnet ef database update <name | 0>' (rollback)"
+      return 0
+      ;;
+
+    # 1. db new <migration_name> (Adds a new migration file)
+    new)
+      if [[ -z "$2" ]]; then
+        echo "Error: 'db new' requires a migration name."
+        echo "Usage: db new <migration_name>"
+        return 1
+      fi
+
+      shift
+      echo "--> Running: dotnet ef migrations add $@"
+      dotnet ef migrations add "$@"
+      ;;
+
+    # 2. db list (Lists existing migrations)
+    list)
+      echo "--> Running: dotnet ef migrations list"
+      dotnet ef migrations list
+      ;;
+
+    # 3. db migrate (Applies pending migrations to the database)
+    migrate)
+      echo "--> Running: dotnet ef database update"
+      dotnet ef database update
+      ;;
+
+    # 4. db down <migration_name> (Rolls back to a specific migration)
+    down)
+      if [[ -z "$2" ]]; then
+        echo "Error: 'db down' requires the target migration name (or '0' to roll back all)."
+        echo "Usage: db down <migration_name | 0>"
+        return 1
+      fi
+
+      shift
+      echo "--> Running: dotnet ef database update $@"
+      dotnet ef database update "$@"
+      ;;
+
+    # Default Case: Unknown subcommand
+    *)
+      echo "Error: Unknown 'db' subcommand: $1"
+      echo "Run 'db' or 'db help' for a list of supported commands."
+      return 1
+      ;;
+  esac
+}
