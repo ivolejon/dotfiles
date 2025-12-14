@@ -1,5 +1,5 @@
 font-size = 14
-theme = tokyonight-storm
+theme = tokyonight
 adjust-cell-height = 25%
 keybind=ctrl+shift+w=close_window
 confirm-close-surface=false

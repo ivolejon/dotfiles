@@ -35,6 +35,7 @@ alias gc='commit'
 alias gr='git_browse'
 alias reset='git reset --hard'
 alias c='clear'
+alias z='zed'
 
 # Sveriges Radio Alias
 alias start-nyheter='ASPIRE_ALLOW_UNSECURED_TRANSPORT=true dotnet run --project Nyhetspublicering.AppHost --launch-profile http'
@@ -43,7 +44,6 @@ source ~/.dotnet.ef.commands
 # PLUGINS
 antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
 antigen bundle djui/alias-tips
-antigen bundle agkozak/zsh-z
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
