@@ -32,10 +32,12 @@ alias gstl="git stash list"
 alias glg='git log --graph --oneline --decorate --all'
 alias gs='git standup'
 alias gc='commit'
-alias gr='git_browse'
+alias rr='git_browse'
 alias reset='git reset --hard'
 alias c='clear'
 alias z='zed'
+alias hist="git log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short"
+alias bat='bat --style=plain'
 
 # Sveriges Radio Alias
 alias start-nyheter='ASPIRE_ALLOW_UNSECURED_TRANSPORT=true dotnet run --project Nyhetspublicering.AppHost --launch-profile http'
@@ -153,3 +155,6 @@ alias ppremote="pnpm -F nyheter remote"
 
 source ~/.secrets
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
+
+export VAULT_ADDR=https://vault.tools.k8s.sr.se

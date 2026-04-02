@@ -7,6 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "vim_mode": false,
   "ensure_final_newline_on_save": false,
   "languages": {
     "Markdown-Inline": {
@@ -52,6 +61,7 @@
     }
   },
   "edit_predictions": {
+    "provider": "copilot",
     "mode": "subtle",
     "copilot": {
       "proxy": null,
@@ -60,13 +70,41 @@
     },
     "enabled_in_text_threads": false
   },
-  "features": {
-    "edit_prediction_provider": "copilot"
-  },
   "agent": {
+    "tool_permissions": {
+      "tools": {
+        "restore_file_from_disk": {
+          "default": "allow"
+        },
+        "fetch": {
+          "default": "allow",
+          "always_allow": [
+            {
+              "pattern": "^https?://nuqs\\.dev"
+            }
+          ]
+        },
+        "create_directory": {
+          "default": "allow",
+          "always_allow": [
+            {
+              "pattern": "^apps/frontend/apps/nyheter/src/pages/"
+            }
+          ]
+        },
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.6"
+    },
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "model": "claude-sonnet-4.5"
     }
   },
   // "buffer_font_family": "Iosevka",

@@ -3,6 +3,7 @@ theme = tokyonight
 adjust-cell-height = 25%
 keybind=ctrl+shift+w=close_window
 confirm-close-surface=false
+unfocused-split-opacity = 1.0
 
 keybind = ctrl+s>c=new_tab
 keybind = ctrl+s>x=close_surface

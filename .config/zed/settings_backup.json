@@ -7,20 +7,48 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "vim_mode": false,
+  "ensure_final_newline_on_save": false,
   "languages": {
     "Markdown-Inline": {
       "soft_wrap": "prefer_line"
     },
     "Zig": {
       // Formatting with ZLS matches `zig fmt`.
-      "format_on_save": "language_server",
+      "formatter": "language_server",
+      "format_on_save": "on",
       // Make sure that zls is the primary language server
-      "language_servers": ["zls", "..."],
+      "language_servers": ["zls"],
       "code_actions_on_format": {
         // Run code actions that currently supports adding and removing discards.
         // "source.fixAll": true,
         // Run code actions that sorts @import declarations.
         // "source.organizeImports": true,
+      }
+    }
+  },
+  "lsp": {
+    "zls": {
+      // There are two ways to set config options:
+      //   - edit your `zls.json` that applies to any editor that uses ZLS
+      //   - set in-editor config options with the `settings` field below.
+      //
+      // Further information on how to configure ZLS:
+      // https://zigtools.org/zls/configure/
+      "settings": {
+        "zls": {
+          // "enable_build_on_save": true,
+          // "enable_autofix": true,
+          // "warn_style": true,
+          // "highlight_global_var_declarations": true
+          // Whether to enable build-on-save diagnostics
+          //
+          // Further information about build-on save:
+          // https://zigtools.org/zls/guides/build-on-save/
+          // "enable_build_on_save": true,
+          // omit the following line if `zig` is in your PATH
+          // "zig_exe_path": "/opt/homebrew/bin/zls"
+        }
       }
     }
   },
@@ -37,14 +65,43 @@
     "edit_prediction_provider": "copilot"
   },
   "agent": {
+    "tool_permissions": {
+      "tools": {
+        "fetch": {
+          "always_allow": [
+            {
+              "pattern": "^https?://nuqs\\.dev"
+            }
+          ]
+        },
+        "create_directory": {
+          "always_allow": [
+            {
+              "pattern": "^apps/frontend/apps/nyheter/src/pages/"
+            }
+          ]
+        },
+        "terminal": {
+          "default_mode": "allow"
+        }
+      }
+    },
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-opus-4.6"
+    },
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "model": "claude-sonnet-4.5"
     }
   },
   // "buffer_font_family": "Iosevka",
   "buffer_font_size": 15,
   "ui_font_size": 16,
+  "buffer_font_features": {
+    "calt": false
+  },
   "theme": {
     "mode": "system",
     "light": "Catppuccin Frappé - No Italics",
