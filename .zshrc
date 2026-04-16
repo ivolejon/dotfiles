@@ -30,7 +30,7 @@ alias gpl="git pull"
 alias gst="git stash -u"
 alias gstl="git stash list"
 alias glg='git log --graph --oneline --decorate --all'
-alias gs='git standup'
+alias gs='git status'
 alias gc='commit'
 alias rr='git_browse'
 alias reset='git reset --hard'
@@ -158,3 +158,5 @@ export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 
 export VAULT_ADDR=https://vault.tools.k8s.sr.se
+
+export CLR_OPENSSL_VERSION_OVERRIDE=3
