@@ -38,9 +38,10 @@ alias c='clear'
 alias z='zed'
 alias hist="git log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short"
 alias bat='bat --style=plain'
+alias gsl="git stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'"
+alias gsp='git stash pop'
 
 # Sveriges Radio Alias
-alias start-nyheter='ASPIRE_ALLOW_UNSECURED_TRANSPORT=true dotnet run --project Nyhetspublicering.AppHost --launch-profile http'
 source ~/.dotnet.ef.commands
 
 # PLUGINS
@@ -94,13 +95,6 @@ if [ -f ~/.kube-config ]; then
   source ~/.kube-config
 else
   echo "Skipping sourcing ~/.kube-config: File not found."
-fi
-
-# AIDER
-if [ -f ~/.kube-config ]; then
-  source ~/.ai
-else
-  echo "Skipping sourcing ~/.ai: File not found."
 fi
 
 # EXPORTS
