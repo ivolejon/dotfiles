@@ -15,6 +15,7 @@ alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {}'"
 alias rg="rg --no-ignore --hidden --colors 'match:fg:yellow' --colors 'path:fg:green'"
 alias dozzle="docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8090:8080 amir20/dozzle:latest"
+alias oc="opencode"
 
 # ALIAS GIT
 # alias git='LC_ALL=en_US git'
@@ -154,3 +155,5 @@ export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 export VAULT_ADDR=https://vault.tools.k8s.sr.se
 
 export CLR_OPENSSL_VERSION_OVERRIDE=3
+
+export KUBECONFIG=~/.kube/stodev03-ext.yaml:~/.kube/stoprod03-ext.yaml
