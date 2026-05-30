@@ -19,3 +19,4 @@
 !.config/zed/**/*.json
 !.config/ghostty/**
 !.dotnet.ef.commands
+!.config/opencode/skills/**/*.md

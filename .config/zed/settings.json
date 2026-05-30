@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "auto_update_extensions": {
+    "csharp": false
+  },
   "cli_default_open_behavior": "existing_window",
   "project_panel": {
     "dock": "left"
@@ -84,6 +87,7 @@
     "enabled_in_text_threads": false
   },
   "agent": {
+    "sidebar_side": "right",
     "dock": "right",
     "tool_permissions": {
       "tools": {
@@ -122,8 +126,8 @@
     }
   },
   // "buffer_font_family": "Iosevka",
-  "buffer_font_size": 15,
-  "ui_font_size": 16,
+  "buffer_font_size": 13.0,
+  "ui_font_size": 14.0,
   "buffer_font_features": {
     "calt": false
   },

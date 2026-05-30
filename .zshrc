@@ -6,7 +6,7 @@ alias ls='ls -G -1 -a --color'
 alias reload_zsh='exec zsh'
 alias config='zed ~'
 alias vim='nvim'
-alias pip='pip3'
+# alias pip='pip3'
 alias python='python3'
 alias lg='lazygit'
 alias chown_to_me='sudo chown -R $(whoami) .'
@@ -41,6 +41,8 @@ alias hist="git log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(re
 alias bat='bat --style=plain'
 alias gsl="git stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'"
 alias gsp='git stash pop'
+alias gsu='git stash -u'
+alias gdf='git diff main... --name-only'
 
 # Sveriges Radio Alias
 source ~/.dotnet.ef.commands
@@ -157,3 +159,8 @@ export VAULT_ADDR=https://vault.tools.k8s.sr.se
 export CLR_OPENSSL_VERSION_OVERRIDE=3
 
 export KUBECONFIG=~/.kube/stodev03-ext.yaml:~/.kube/stoprod03-ext.yaml
+
+# Added by get-aspire-cli.sh
+export PATH="$HOME/.aspire/bin:$PATH"
+
+export PATH="~/.dotnet/tools:$PATH"
