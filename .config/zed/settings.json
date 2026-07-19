@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "colorize_brackets": true,
   "auto_update_extensions": {
     "csharp": false
   },
@@ -132,9 +133,9 @@
     "calt": false
   },
   "theme": {
-    "mode": "system",
-    "light": "Catppuccin Frappé - No Italics",
-    "dark": "One Dark"
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Tokyo Night"
   },
   "diagnostics": {
     "inline": {

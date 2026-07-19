@@ -2,6 +2,7 @@ theme = "tokyonight"
 
 [editor]
 line-number = "relative"
+gutters = ["diagnostics", "spacer", "diff", "line-numbers", "spacer"]
 
 mouse = true
 

@@ -1,85 +1,52 @@
+# ==============================================================================
+# 1. INITIALIZATION & SECRETS
+# ==============================================================================
 source ~/.zshenv
-source ~/antigen.zsh
+[ -f ~/.secrets ] && source ~/.secrets
+[ -f "$HOME/.local/bin/env" ] && source "$HOME/.local/bin/env"
+[ -f ~/.dotnet.ef.commands ] && source ~/.dotnet.ef.commands # Sveriges Radio
 
-# ALIASES
-alias ls='ls -G -1 -a --color'
-alias reload_zsh='exec zsh'
-alias config='zed ~'
-alias vim='nvim'
-# alias pip='pip3'
-alias python='python3'
-alias lg='lazygit'
-alias chown_to_me='sudo chown -R $(whoami) .'
-alias killport='f() { lsof -i tcp:$1 | awk '"'"'NR>1 {print $2}'"'"' | xargs kill -9; unset -f f; }; f'
-alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
-alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {}'"
-alias rg="rg --no-ignore --hidden --colors 'match:fg:yellow' --colors 'path:fg:green'"
-alias dozzle="docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8090:8080 amir20/dozzle:latest"
-alias oc="opencode"
+# ==============================================================================
+# 2. ENVIRONMENT VARIABLES
+# ==============================================================================
+export VISUAL=nvim
+export EDITOR=nvim
+export KUBE_EDITOR=nvim
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export VAULT_ADDR="https://vault.tools.k8s.sr.se"
+export CLR_OPENSSL_VERSION_OVERRIDE=3
+export DOTNET_ROOT="/usr/local/share/dotnet"
+export KUBECONFIG="$HOME/.kube/stodev03-ext.yaml:$HOME/.kube/stoprod03-ext.yaml"
+export BUN_INSTALL="$HOME/.bun"
+export PNPM_HOME="/Users/ivo/Library/pnpm"
 
-# ALIAS GIT
-# alias git='LC_ALL=en_US git'
-alias gi="git init"
-alias status="git status -sbu"
-alias gco="git checkout"
-alias gcob="git checkout -b"
-alias gp="git push"
-alias gm="git merge"
-alias ga="git add ."
-alias gcm="git commit -m"
-alias gpl="git pull"
-alias gst="git stash -u"
-alias gstl="git stash list"
-alias glg='git log --graph --oneline --decorate --all'
-alias gs='git status'
-alias gc='commit'
-alias rr='git_browse'
-alias reset='git reset --hard'
-alias c='clear'
-alias z='zed'
-alias hist="git log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short"
-alias bat='bat --style=plain'
-alias gsl="git stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'"
-alias gsp='git stash pop'
-alias gsu='git stash -u'
-alias gdf='git diff main... --name-only'
+# ==============================================================================
+# 3. PATH CONSTRUCTION
+# ==============================================================================
+# Lägger till alla sökvägar systematiskt för att undvika rörig kod
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.moon/bin:$PATH"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/Users/ivolej01/.docker/bin:$PATH"
+export PATH="$PATH:/Users/ivolej01/.dotnet/tools"
+export PATH="$PATH:/usr/local/share/dotnet"
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+export PATH="/opt/homebrew/share/google-cloud-sdk/bin:$PATH"
+export PATH="$HOME/.aspire/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$HOME/.cargo/env:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin" # RVM rekommenderar att ligga sist i PATH
 
-# Sveriges Radio Alias
-source ~/.dotnet.ef.commands
+# PNPM
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
-# PLUGINS
-antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
-antigen bundle djui/alias-tips
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen apply
-
-# PLUGINS MORE
-# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.nvm/nvm.sh
-
-#PROMPT
-setopt prompt_subst
-prompt='%F{green}%*%f %F{blue}%~%f %F{red}$(git_branch_name)%F{default}> '
-
-# AUTOCOMPLETE
-autoload -Uz compinit && compinit
-zstyle ':completion:*' completer _extensions _complete _approximate
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu select
-
-# KEYBINDINGS with arrow keys LS
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey '^[[A'  up-line-or-beginning-search    # Arrow up
-bindkey '^[OA'  up-line-or-beginning-search
-bindkey '^[[B'  down-line-or-beginning-search  # Arrow down
-bindkey '^[OB'  down-line-or-beginning-search
-
-#HISTORY
+# ==============================================================================
+# 4. HISTORY SETTINGS
+# ==============================================================================
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
@@ -91,76 +58,116 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# KUBERNETES
-export KUBE_EDITOR=nvim
-alias k="kubecolor"
+# ==============================================================================
+# 5. AUTOCOMPLETION
+# ==============================================================================
+# Lägg till completion-mappar INNAN compinit körs
+fpath=(/Users/ivolej01/.docker/completions $fpath)
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' completer _extensions _complete _approximate
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu select
+
+# ==============================================================================
+# 6. KEYBINDINGS (Arrow keys)
+# ==============================================================================
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A'  up-line-or-beginning-search    # Arrow up
+bindkey '^[OA'  up-line-or-beginning-search
+bindkey '^[[B'  down-line-or-beginning-search  # Arrow down
+bindkey '^[OB'  down-line-or-beginning-search
+
+# ==============================================================================
+# 7. PROMPT
+# ==============================================================================
+setopt prompt_subst
+prompt='%F{green}%*%f %F{blue}%~%f %F{red}$(git_branch_name)%F{default}> '
+
+# ==============================================================================
+# 8. PLUGINS & TOOLS (Antigen, NVM, Bun, Kube)
+# ==============================================================================
+source ~/antigen.zsh
+antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
+antigen bundle djui/alias-tips
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zpm-zsh/autoenv
+antigen apply
+
+# Manuella Plugins
+[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# NVM
+[ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+
+# Bun Completions
+[ -s "/Users/ivolejon/.bun/_bun" ] && source "/Users/ivolejon/.bun/_bun"
+
+# Kubernetes
 if [ -f ~/.kube-config ]; then
   source ~/.kube-config
 else
   echo "Skipping sourcing ~/.kube-config: File not found."
 fi
 
-# EXPORTS
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export VISUAL=nvim
-export EDITOR=nvim
-export PATH="$HOME/go/bin:$PATH"
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$HOME/.moon/bin:$PATH"
+# ==============================================================================
+# 9. FUNCTIONS
+# ==============================================================================
+killport() {
+  lsof -i tcp:$1 | awk 'NR>1 {print $2}' | xargs kill -9
+}
 
-# pnpm
-export PNPM_HOME="/Users/ivo/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# ==============================================================================
+# 10. ALIASES
+# ==============================================================================
+# Generella
+alias c='clear'
+alias ls='ls -G -1 -a --color'
+alias reload_zsh='exec zsh'
+alias config='zed ~/.zshrc'
+alias z='zed'
+alias vim='nvim'
+alias python='python3'
+alias chown_to_me='sudo chown -R $(whoami) .'
 
-# bun completions
-[ -s "/Users/ivolejon/.bun/_bun" ] && source "/Users/ivolejon/.bun/_bun"
+# Verktyg & CLI
+alias lg='lazygit'
+alias bat='bat --style=plain'
+alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range=:500 {}'"
+alias rg="rg --no-ignore --hidden --colors 'match:fg:yellow' --colors 'path:fg:green'"
+alias dozzle="docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8090:8080 amir20/dozzle:latest"
+alias oc="opencode"
+alias k="kubecolor"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-## MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-# export PATH="/Users/ivolej01/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-export PATH="/Users/ivolej01/.docker/bin:$PATH"
-export PATH="$PATH:/Users/ivolej01/.dotnet/tools"
-
-
-. "$HOME/.local/bin/env"
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/ivolej01/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-
-
-# export DOTNET_ROOT="$(dirname "$(which dotnet)")"
-export DOTNET_ROOT="/usr/local/share/dotnet"
-export PATH="$PATH:/usr/local/share/dotnet"
+# PNPM & Projekt
 alias p='pnpm'
-
 alias pphost="pnpm -F host dev"
 alias ppremote="pnpm -F nyheter remote"
 
-source ~/.secrets
-export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
-export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
-
-export VAULT_ADDR=https://vault.tools.k8s.sr.se
-
-export CLR_OPENSSL_VERSION_OVERRIDE=3
-
-export KUBECONFIG=~/.kube/stodev03-ext.yaml:~/.kube/stoprod03-ext.yaml
-
-# Added by get-aspire-cli.sh
-export PATH="$HOME/.aspire/bin:$PATH"
-
-export PATH="~/.dotnet/tools:$PATH"
+# Git
+alias gi="git init"
+alias gs='git status'
+alias status="git status -sbu"
+alias glg='git log --graph --oneline --decorate --all'
+alias hist="git log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias ga="git add ."
+alias gcm="git commit -m"
+alias gc="git commit"
+alias gpl="git pull"
+alias gp="git push"
+alias gm="git merge"
+alias gst="git stash -u"
+alias gstl="git stash list"
+alias gsu='git stash -u'
+alias gsp='git stash pop'
+alias gsl="git stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'"
+alias gdf='git diff main... --name-only'
+alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
+alias rr='git_browse'
+alias reset='git reset --hard'
