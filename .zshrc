@@ -5,6 +5,7 @@ source ~/.zshenv
 [ -f ~/.secrets ] && source ~/.secrets
 [ -f "$HOME/.local/bin/env" ] && source "$HOME/.local/bin/env"
 [ -f ~/.dotnet.ef.commands ] && source ~/.dotnet.ef.commands # Sveriges Radio
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"       # Rust & Cargo
 
 # ==============================================================================
 # 2. ENVIRONMENT VARIABLES
@@ -35,7 +36,6 @@ export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 export PATH="/opt/homebrew/share/google-cloud-sdk/bin:$PATH"
 export PATH="$HOME/.aspire/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
-export PATH="$HOME/.cargo/env:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # RVM rekommenderar att ligga sist i PATH
 
 # PNPM
