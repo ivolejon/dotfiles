@@ -95,6 +95,7 @@ antigen bundle "MichaelAquilina/zsh-autoswitch-virtualenv"
 antigen bundle djui/alias-tips
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zpm-zsh/autoenv
+antigen bundle joshskidmore/zsh-fzf-history-search
 antigen apply
 
 # Manuella Plugins
@@ -120,6 +121,17 @@ fi
 killport() {
   lsof -i tcp:$1 | awk 'NR>1 {print $2}' | xargs kill -9
 }
+toggle-theme() {
+    osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+}
+reload-zsh-config(){
+    echo "Reloading zsh configuration..."
+    source ~/.zshrc
+    echo "Zsh configuration reloaded."
+}
+list-visited-branches(){
+    git reflog | grep "checkout: moving from" | awk '{print $NF}' | awk '!x[$0]++' | head -n 20 | tail -r
+}
 
 # ==============================================================================
 # 10. ALIASES
@@ -127,8 +139,9 @@ killport() {
 # Generella
 alias c='clear'
 alias ls='ls -G -1 -a --color'
-alias reload_zsh='exec zsh'
+alias r='reload-zsh-config'
 alias config='zed ~/.zshrc'
+alias t='toggle-theme'
 alias z='zed'
 alias vim='nvim'
 alias python='python3'
@@ -171,3 +184,5 @@ alias gdf='git diff main... --name-only'
 alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
 alias rr='git_browse'
 alias reset='git reset --hard'
+# Nedan för att lista branchen jag har besökt i stigande ordning
+alias gb="list-visited-branches"

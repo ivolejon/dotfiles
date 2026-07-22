@@ -133,7 +133,7 @@
     "calt": false
   },
   "theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "One Light",
     "dark": "Tokyo Night"
   },

@@ -1,9 +1,12 @@
 font-size = 14
-theme = tokyonight
+font-family = "Iosevka Term"
+
+theme = dark:tokyonight,light:iTerm2 Light Background
+
 adjust-cell-height = 25%
 keybind=ctrl+shift+w=close_window
 confirm-close-surface=false
-unfocused-split-opacity = 1.0
+unfocused-split-opacity = 0.9
 split-divider-color = Light Slate Gray
 
 keybind = ctrl+s>c=new_tab
