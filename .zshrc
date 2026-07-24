@@ -130,7 +130,23 @@ reload-zsh-config(){
     echo "Zsh configuration reloaded."
 }
 list-visited-branches(){
-    git reflog | grep "checkout: moving from" | awk '{print $NF}' | awk '!x[$0]++' | head -n 20 | tail -r
+    git --no-pager reflog | grep "checkout: moving from" | awk '{print $NF}' | awk '!x[$0]++' | head -n 20 | tail -r
+}
+diff-parent() {
+    # 1. Om argument skickades med, använd det, annars använd @{u}
+    local target="$1"
+    if [ -z "$target" ]; then
+        target="@{u}"
+    fi
+
+    # 2. Validera att grenen faktiskt existerar
+    if ! git rev-parse --verify "$target" >/dev/null 2>&1; then
+        echo "Fel: Grenen '$target' hittades inte."
+        return 1
+    fi
+
+    echo "Diffar mot: $target"
+    git diff "$target"... --name-only
 }
 
 # ==============================================================================
@@ -140,7 +156,7 @@ list-visited-branches(){
 alias c='clear'
 alias ls='ls -G -1 -a --color'
 alias r='reload-zsh-config'
-alias config='zed ~/.zshrc'
+alias config='zed ~/'
 alias t='toggle-theme'
 alias z='zed'
 alias vim='nvim'
@@ -180,7 +196,7 @@ alias gstl="git stash list"
 alias gsu='git stash -u'
 alias gsp='git stash pop'
 alias gsl="git stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'"
-alias gdf='git diff main... --name-only'
+alias gdf='diff-parent'
 alias cb='git rev-parse --abbrev-ref HEAD | pbcopy'
 alias rr='git_browse'
 alias reset='git reset --hard'

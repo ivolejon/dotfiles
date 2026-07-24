@@ -18,5 +18,6 @@
 !.kube-config
 !.config/zed/**/*.json
 !.config/ghostty/**
+!.config/herdr/**
 !.dotnet.ef.commands
 !.config/opencode/skills/**/*.md

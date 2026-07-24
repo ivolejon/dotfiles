@@ -1,0 +1,15 @@
+2026-07-24T07:02:59.851223Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=62195
+2026-07-24T07:02:59.851294Z  INFO herdr::client: connecting to server path=/Users/ivolej01/.config/herdr/herdr-client.sock
+2026-07-24T07:03:00.068837Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-24T07:44:12.669679Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=62195
+2026-07-24T08:03:09.165137Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=71557
+2026-07-24T08:03:09.165329Z  INFO herdr::client: connecting to server path=/Users/ivolej01/.config/herdr/herdr-client.sock
+2026-07-24T08:03:09.237289Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-24T08:17:43.321304Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=71557
+2026-07-24T08:18:12.024935Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=74714
+2026-07-24T08:18:12.025160Z  INFO herdr::client: connecting to server path=/Users/ivolej01/.config/herdr/herdr-client.sock
+2026-07-24T08:18:12.189624Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
+2026-07-24T08:45:06.579413Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=74714
+2026-07-24T08:45:15.013371Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=76885
+2026-07-24T08:45:15.013408Z  INFO herdr::client: connecting to server path=/Users/ivolej01/.config/herdr/herdr-client.sock
+2026-07-24T08:45:15.215517Z  INFO herdr::client: handshake succeeded version=17 encoding=SemanticFrame
