@@ -19,5 +19,6 @@
 !.config/zed/**/*.json
 !.config/ghostty/**
 !.config/herdr/**
+!.config/hunk/**
 !.dotnet.ef.commands
 !.config/opencode/skills/**/*.md
