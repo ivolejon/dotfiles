@@ -414,3 +414,4 @@
 2026-07-29T16:50:54.316498Z  INFO herdr::server::headless: client disconnected client_id=8
 2026-07-29T16:53:46.905538Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
 2026-07-29T17:23:46.916966Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-29T17:53:46.924466Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
