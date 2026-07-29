@@ -20,5 +20,6 @@
 !.config/ghostty/**
 !.config/herdr/**
 !.config/hunk/**
+!.config/nix/**
 !.dotnet.ef.commands
 !.config/opencode/skills/**/*.md

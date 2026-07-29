@@ -226,3 +226,191 @@
 2026-07-24T09:25:58.275140Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=9 pid=81409
 2026-07-24T09:26:01.968828Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=9 status="ExitStatus { code: 0, signal: None }"
 2026-07-24T09:26:01.968958Z  INFO herdr::pane: pane session terminated pane=9 pid=81409 signal=Hangup
+2026-07-24T09:28:41.175872Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=7 status="ExitStatus { code: 1, signal: None }"
+2026-07-24T09:28:41.198400Z  INFO herdr::pane: pane session terminated pane=7 pid=80892 signal=Hangup
+2026-07-24T09:28:41.199049Z  WARN herdr::app::actions: PaneDied for unknown pane pane=7
+2026-07-24T09:28:44.153692Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=10 rows=43 cols=207 scrollback_limit_bytes=10000000
+2026-07-24T09:28:44.157322Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=10 pid=81688
+2026-07-24T09:28:44.157549Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T09:28:47.292592Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=11 rows=22 cols=207 scrollback_limit_bytes=10000000
+2026-07-24T09:28:47.299304Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=11 pid=82079
+2026-07-24T09:28:47.299751Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T09:28:49.761764Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=11 status="ExitStatus { code: 1, signal: None }"
+2026-07-24T09:28:49.783160Z  INFO herdr::pane: pane session terminated pane=11 pid=82079 signal=Hangup
+2026-07-24T09:28:49.783666Z  WARN herdr::app::actions: PaneDied for unknown pane pane=11
+2026-07-24T09:28:50.394433Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=10 status="ExitStatus { code: 1, signal: None }"
+2026-07-24T09:28:50.415386Z  INFO herdr::pane: pane session terminated pane=10 pid=81688 signal=Hangup
+2026-07-24T09:28:50.416081Z  WARN herdr::app::actions: PaneDied for unknown pane pane=10
+2026-07-24T09:28:52.279003Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=12 rows=43 cols=207 scrollback_limit_bytes=10000000
+2026-07-24T09:28:52.286305Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=12 pid=82482
+2026-07-24T09:28:52.286671Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T09:28:53.536871Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=12 status="ExitStatus { code: 1, signal: None }"
+2026-07-24T09:28:53.559711Z  INFO herdr::pane: pane session terminated pane=12 pid=82482 signal=Hangup
+2026-07-24T09:28:53.560472Z  WARN herdr::app::actions: PaneDied for unknown pane pane=12
+2026-07-24T09:28:58.567533Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=1
+2026-07-24T09:29:04.252242Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=13 rows=43 cols=207 scrollback_limit_bytes=10000000
+2026-07-24T09:29:04.259298Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=13 pid=82877
+2026-07-24T09:29:04.259703Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T09:29:09.268094Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=1
+2026-07-24T09:29:32.931594Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=14 rows=43 cols=104 scrollback_limit_bytes=10000000
+2026-07-24T09:29:32.939015Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=14 pid=83284
+2026-07-24T09:29:32.939436Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T09:29:37.945107Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=1
+2026-07-24T09:32:21.881041Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T09:32:26.888434Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=1
+2026-07-24T09:32:59.700675Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-24T09:33:12.896091Z  INFO herdr::app::actions: copied double-clicked token to clipboard
+2026-07-24T09:34:52.594924Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T09:34:57.602403Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=1
+2026-07-24T10:02:59.686039Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-24T10:04:38.161739Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:04:39.059945Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-24T10:04:39.060103Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:04:44.069387Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=1
+2026-07-24T10:04:48.895738Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=15 rows=43 cols=104 scrollback_limit_bytes=10000000
+2026-07-24T10:04:48.904866Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=15 pid=88534
+2026-07-24T10:04:48.905758Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w3" pane_id=15
+2026-07-24T10:04:48.905788Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3"
+2026-07-24T10:04:48.905863Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t1"
+2026-07-24T10:04:50.983075Z  INFO herdr::pane: agent changed pane=15 previous_agent=None agent=Some(OpenCode) process=opencode pgid=Some(88941)
+2026-07-24T10:04:53.718930Z  INFO herdr::pane: agent changed pane=15 previous_agent=Some(OpenCode) agent=None pgid=Some(88534)
+2026-07-24T10:04:53.911890Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T10:04:55.192886Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-24T10:04:55.193200Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:04:55.943213Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3"
+2026-07-24T10:04:55.943461Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t1"
+2026-07-24T10:04:56.559949Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-24T10:04:56.560242Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:04:57.978013Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:04:59.111551Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:00.177351Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:00.748998Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:01.277876Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:02.144892Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:02.726833Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:03.311006Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:03.894293Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:04.427507Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:04.944119Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:05.776260Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:06.348593Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:07.210796Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:05:12.218485Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T10:22:29.581518Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:22:34.589646Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T10:24:39.778398Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3"
+2026-07-24T10:24:39.778620Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t1"
+2026-07-24T10:24:40.679138Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-24T10:24:40.679438Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:24:42.145192Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3"
+2026-07-24T10:24:42.145442Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t1"
+2026-07-24T10:24:42.828601Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-24T10:24:42.828795Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:24:47.835140Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T10:30:16.157975Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3"
+2026-07-24T10:30:16.158299Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t1"
+2026-07-24T10:30:16.874494Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-24T10:30:16.874780Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:30:17.675162Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:30:22.684650Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T10:30:23.624602Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T10:30:28.634555Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T10:32:59.672043Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-24T12:26:48.008620Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-24T12:47:36.953419Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3"
+2026-07-24T12:47:36.954864Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t1"
+2026-07-24T12:47:37.920008Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-24T12:47:37.920267Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T12:47:42.926113Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T12:56:48.198432Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-24T13:26:48.206947Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-24T13:43:06.646816Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T13:43:11.657234Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T13:43:12.650759Z  INFO herdr::pane: agent changed pane=5 previous_agent=Some(GithubCopilot) agent=None pgid=Some(77047)
+2026-07-24T13:43:13.657789Z  INFO herdr::pane: agent changed pane=5 previous_agent=None agent=Some(GithubCopilot) process=copilot pgid=Some(3143)
+2026-07-24T13:56:48.239525Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-24T13:59:04.265131Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T13:59:09.299261Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T13:59:18.181362Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T13:59:23.184184Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T14:23:38.203944Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-24T14:23:43.211578Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=2
+2026-07-24T14:26:48.262670Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-24T14:56:48.284506Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-25T19:01:07.275462Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-25T19:01:10.338605Z  WARN herdr::detect::manifest_update: agent detection manifest update failed: failed to fetch https://herdr.dev/agent-detection/index.toml
+2026-07-25T19:01:10.338606Z  WARN herdr::logging: update check failed event="update.check.complete" subsystem="update" outcome="error" err="failed to fetch Homebrew formula JSON"
+2026-07-26T13:38:37.895181Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-26T14:08:37.881426Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-26T14:09:14.146453Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="maki" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/maki.toml
+2026-07-26T14:09:17.214032Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="opencode" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/opencode.toml
+2026-07-26T14:09:20.275432Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="pi" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/pi.toml
+2026-07-26T14:09:23.338656Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="qodercli" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/qodercli.toml
+2026-07-26T14:09:26.407743Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="copilot" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/github-copilot.toml
+2026-07-26T16:02:16.524508Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-26T16:02:19.604821Z  WARN herdr::logging: update check failed event="update.check.complete" subsystem="update" outcome="error" err="failed to fetch Homebrew formula JSON"
+2026-07-26T16:02:19.604821Z  WARN herdr::detect::manifest_update: agent detection manifest update failed: failed to fetch https://herdr.dev/agent-detection/index.toml
+2026-07-26T16:32:16.513184Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-26T16:32:19.572592Z  WARN herdr::detect::manifest_update: agent detection manifest update failed: failed to fetch https://herdr.dev/agent-detection/index.toml
+2026-07-26T16:32:19.572590Z  WARN herdr::logging: update check failed event="update.check.complete" subsystem="update" outcome="error" err="failed to fetch Homebrew formula JSON"
+2026-07-26T17:17:51.186692Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-26T17:17:54.239441Z  WARN herdr::detect::manifest_update: agent detection manifest update failed: failed to fetch https://herdr.dev/agent-detection/index.toml
+2026-07-26T17:17:54.246184Z  WARN herdr::logging: update check failed event="update.check.complete" subsystem="update" outcome="error" err="failed to fetch Homebrew formula JSON"
+2026-07-26T18:43:14.144888Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-26T18:43:17.198744Z  WARN herdr::detect::manifest_update: agent detection manifest update failed: failed to fetch https://herdr.dev/agent-detection/index.toml
+2026-07-26T18:43:17.199522Z  WARN herdr::logging: update check failed event="update.check.complete" subsystem="update" outcome="error" err="failed to fetch Homebrew formula JSON"
+2026-07-27T09:14:21.134738Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T13:01:04.442741Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T13:31:04.428320Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T14:01:04.408946Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T14:31:04.387222Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T15:01:04.365939Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T15:27:31.853170Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=16 rows=43 cols=104 scrollback_limit_bytes=10000000
+2026-07-27T15:27:31.863656Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=16 pid=61251
+2026-07-27T15:27:31.864283Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w4" pane_id=16
+2026-07-27T15:27:31.864324Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w4"
+2026-07-27T15:27:31.864417Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t1"
+2026-07-27T15:27:36.871914Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=3
+2026-07-27T15:27:59.145861Z  INFO herdr::pane: agent changed pane=16 previous_agent=None agent=Some(OpenCode) process=opencode pgid=Some(61888)
+2026-07-27T15:31:19.305932Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T16:01:19.285260Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T16:31:19.268444Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T17:01:19.247556Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T17:12:50.731288Z  INFO herdr::pane: agent changed pane=16 previous_agent=Some(OpenCode) agent=None pgid=Some(61251)
+2026-07-27T17:18:56.984610Z  INFO herdr::pane: agent changed pane=16 previous_agent=None agent=Some(OpenCode) process=opencode pgid=Some(75312)
+2026-07-27T17:31:19.227318Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T18:01:19.205737Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-28T07:52:50.616144Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-28T07:57:53.195752Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=17 rows=43 cols=207 scrollback_limit_bytes=10000000
+2026-07-28T07:57:53.205441Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=17 pid=84984
+2026-07-28T07:57:53.206787Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t1"
+2026-07-28T07:57:58.212564Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=3
+2026-07-28T07:58:10.908193Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t1"
+2026-07-28T07:58:15.077626Z  INFO herdr::pane: agent changed pane=16 previous_agent=Some(OpenCode) agent=None pgid=Some(61251)
+2026-07-28T07:58:15.919018Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=3
+2026-07-28T07:58:16.956247Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t1"
+2026-07-28T07:58:17.555369Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=17 status="ExitStatus { code: 1, signal: None }"
+2026-07-28T07:58:17.576835Z  INFO herdr::pane: pane session terminated pane=17 pid=84984 signal=Hangup
+2026-07-28T07:58:17.577469Z  WARN herdr::app::actions: PaneDied for unknown pane pane=17
+2026-07-28T07:58:19.218884Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=18 rows=43 cols=207 scrollback_limit_bytes=10000000
+2026-07-28T07:58:19.226509Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=18 pid=85460
+2026-07-28T07:58:19.227057Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t1"
+2026-07-28T07:58:20.770305Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=18 status="ExitStatus { code: 1, signal: None }"
+2026-07-28T07:58:20.792479Z  INFO herdr::pane: pane session terminated pane=18 pid=85460 signal=Hangup
+2026-07-28T07:58:20.793017Z  WARN herdr::app::actions: PaneDied for unknown pane pane=18
+2026-07-28T07:58:21.903943Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=19 rows=43 cols=207 scrollback_limit_bytes=10000000
+2026-07-28T07:58:21.910962Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=19 pid=85868
+2026-07-28T07:58:21.911425Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t1"
+2026-07-28T07:58:26.919951Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/ivolej01/.config/herdr/session.json workspaces=3
+2026-07-28T10:22:47.939395Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-28T11:12:29.226993Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-28T11:47:21.590315Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-28T15:02:14.569627Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-28T19:38:23.465363Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-28T22:11:40.535402Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-29T06:36:27.892210Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-29T14:36:52.503983Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-29T16:50:46.014337Z  INFO herdr::server::headless: client resize client_id=8 cols=243 rows=42 cell_width_px=0 cell_height_px=0
+2026-07-29T16:50:54.316498Z  INFO herdr::server::headless: client disconnected client_id=8
+2026-07-29T16:53:46.905538Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-29T17:23:46.916966Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
